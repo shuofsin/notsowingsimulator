@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ptemw8vksl2"]
+
+[ext_resource type="PackedScene" uid="uid://dt5oie7lqnq3l" path="res://Scenes/Environment/temp_block.tscn" id="1_rq4xh"]
+[ext_resource type="PackedScene" uid="uid://x631a46ouifa" path="res://Scenes/Player/player.tscn" id="2_5e1ne"]
+
+[node name="TestWorld" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_5e1ne")]
+position = Vector2(160, 168)
+
+[node name="TempBlock" parent="." instance=ExtResource("1_rq4xh")]
+position = Vector2(240, 152)
