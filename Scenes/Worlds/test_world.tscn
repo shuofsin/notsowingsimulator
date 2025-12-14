@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7ptemw8vksl2"]
+[gd_scene load_steps=3 format=4 uid="uid://c7ptemw8vksl2"]
 
 [ext_resource type="PackedScene" uid="uid://dt5oie7lqnq3l" path="res://Scenes/Environment/temp_block.tscn" id="1_rq4xh"]
 [ext_resource type="PackedScene" uid="uid://x631a46ouifa" path="res://Scenes/Player/player.tscn" id="2_5e1ne"]
@@ -10,4 +10,4 @@ y_sort_enabled = true
 position = Vector2(160, 168)
 
 [node name="TempBlock" parent="." instance=ExtResource("1_rq4xh")]
-position = Vector2(240, 152)
+tile_map_data = PackedByteArray("AAAQAAsAAQAAAAAAAAAQAAoAAQAAAAAAAAAQAAkAAQAAAAAAAAASAAkAAQAAAAAAAAASAAoAAQAAAAAAAAASAAsAAQAAAAAAAAAOAAsAAQAAAAAAAAANAAkAAQAAAAAAAAAHAAkAAQAAAAAAAAAGAAwAAQAAAAAAAAADAAkAAQAAAAAAAAAKAA0AAQAAAAAAAAANAA0AAQAAAAAAAAAKAAgAAQAAAAAAAAAOAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAA=")
