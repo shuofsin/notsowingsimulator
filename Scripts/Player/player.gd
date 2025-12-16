@@ -2,11 +2,11 @@ extends CharacterBody2D
 class_name Player
 
 var speed: float = 100.0
-@onready var collision_polygon_2d: CollisionPolygon2D = %CollisionPolygon2D
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		animation_player.play("Hit")
 
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
