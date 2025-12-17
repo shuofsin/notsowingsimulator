@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://fwc5p5v7t2p6"]
+
+[ext_resource type="Texture2D" uid="uid://c0alugag6w7ui" path="res://Assets/Environment/tilemap-wheat.png" id="1_yoahu"]
+[ext_resource type="Script" uid="uid://cho3xik2nhifs" path="res://Scripts/Environment/temp_tile_map.gd" id="2_hh611"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6tv3"]
+texture = ExtResource("1_yoahu")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v1431"]
+sources/0 = SubResource("TileSetAtlasSource_v6tv3")
+
+[node name="TempTileMap" type="TileMapLayer"]
+tile_set = SubResource("TileSet_v1431")
+script = ExtResource("2_hh611")
