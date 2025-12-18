@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=4 uid="uid://c7ptemw8vksl2"]
+[gd_scene load_steps=3 format=3 uid="uid://c7ptemw8vksl2"]
 
 [ext_resource type="PackedScene" uid="uid://x631a46ouifa" path="res://Scenes/Player/player.tscn" id="2_5e1ne"]
 [ext_resource type="PackedScene" uid="uid://fwc5p5v7t2p6" path="res://Scenes/Environment/temp_tile_map.tscn" id="2_y6sxc"]
@@ -7,7 +7,6 @@
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_5e1ne")]
-position = Vector2(160, 168)
+position = Vector2(160, 90)
 
 [node name="TempTileMap" parent="." instance=ExtResource("2_y6sxc")]
-tile_map_data = PackedByteArray("AAADAAoAAAAAAAAAAAAHAAcAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAEAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAOAAcAAAAAAAAAAAAGAAoAAAAAAAAAAAACAAYAAAAAAAAAAAASAAoAAAAAAAAAAAAMAA4AAAAAAAAAAAANAAYAAAAAAAAAAAAMAAYAAAAAAAAAAAA=")
