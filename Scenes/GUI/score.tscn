@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtfp4qw160bvq"]
+
+[ext_resource type="Script" uid="uid://wn32oo6yr7be" path="res://Scripts/GUI/score.gd" id="1_b33dj"]
+
+[node name="Score" type="CanvasLayer"]
+layer = 2
+follow_viewport_enabled = true
+script = ExtResource("1_b33dj")
+
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "Score:"

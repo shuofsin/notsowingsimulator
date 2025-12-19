@@ -9,5 +9,6 @@ func _ready() -> void:
 func _entered(_area_entered: Area2D):
 	var points: Node = points_scene.instantiate() 
 	points.global_position = global_position
+	Global.score += 1
 	get_parent().add_child(points)
 	queue_free()
