@@ -1,50 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://x631a46ouifa"]
+[gd_scene load_steps=9 format=3 uid="uid://x631a46ouifa"]
 
 [ext_resource type="Script" uid="uid://dk0hjmwt3ro15" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
 [ext_resource type="Texture2D" uid="uid://bcgtjllakvk7h" path="res://Assets/Player/proto_player.png" id="2_a3d8c"]
+[ext_resource type="PackedScene" uid="uid://uyu44eoi325r" path="res://Scenes/Components/hitbox_component.tscn" id="3_xpcdj"]
+[ext_resource type="Script" uid="uid://bpkeutr8qxy8f" path="res://Scripts/Component/attack.gd" id="4_mtuoh"]
+[ext_resource type="Texture2D" uid="uid://jmbm64qx8whi" path="res://Assets/Player/proto_tool.png" id="5_htcer"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a3d8c"]
 radius = 3.0
 
-[sub_resource type="Animation" id="Animation_a3d8c"]
-resource_name = "Hit"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
+[sub_resource type="Resource" id="Resource_htcer"]
+script = ExtResource("4_mtuoh")
+attack_damage = 1.0
+metadata/_custom_type_script = "uid://bpkeutr8qxy8f"
 
-[sub_resource type="Animation" id="Animation_xpcdj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtuoh"]
-_data = {
-&"Hit": SubResource("Animation_a3d8c"),
-&"RESET": SubResource("Animation_xpcdj")
-}
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
-size = Vector2(36, 40)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -63,17 +34,16 @@ zoom = Vector2(2, 2)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Hitbox"]
+[node name="HitboxSmall" parent="." instance=ExtResource("3_xpcdj")]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_mtuoh")
-}
+attack = SubResource("Resource_htcer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_a3d8c")
-disabled = true
-debug_color = Color(0.8483163, 0.34211445, 0.4139011, 0.41960785)
+[node name="DirectionalSwing" type="CollisionShape2D" parent="HitboxSmall"]
+position = Vector2(18, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_mtuoh")
+
+[node name="ToolSprite" type="Sprite2D" parent="HitboxSmall"]
+unique_name_in_owner = true
+position = Vector2(17, 0)
+texture = ExtResource("5_htcer")
