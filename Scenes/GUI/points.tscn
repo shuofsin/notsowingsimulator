@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7qsa6sbr3c3h"]
+[gd_scene load_steps=3 format=3 uid="uid://c7qsa6sbr3c3h"]
 
 [ext_resource type="Script" uid="uid://m6tki24qy1hv" path="res://Scripts/GUI/points.gd" id="1_h4bij"]
+[ext_resource type="AudioStream" uid="uid://c4wksydgnfk70" path="res://Assets/Sounds/points.wav" id="2_5r7o3"]
 
 [node name="Points" type="Node2D"]
 script = ExtResource("1_h4bij")
@@ -22,3 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "+1"
 horizontal_alignment = 1
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_5r7o3")

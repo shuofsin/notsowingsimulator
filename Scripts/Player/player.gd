@@ -10,6 +10,7 @@ var swing_reset_timer: float
 var SWING_RESET_TIME: float = 0.2
 @onready var hitbox_small: HitboxComponent = %HitboxSmall
 @onready var tool_sprite: Sprite2D = %ToolSprite
+@onready var sounds: AudioStreamPlayer2D = %Sounds
 
 
 func _process(_delta: float) -> void:
@@ -39,11 +40,11 @@ func _swing() -> void:
 	is_swinging = true
 	var swing_tween = create_tween()
 	swing_tween.finished.connect(_stop_swinging)
+	sounds.play()
 	if swing_number % 3 == 0: 
 		swing_tween.tween_property(hitbox_small, "rotation", hitbox_small.rotation + 2*PI, TOTAL_SWING_TIME * 1.5)
 		return 
 	swing_tween.tween_property(hitbox_small, "rotation", hitbox_small.rotation + (PI/2 * (-1 if swing_number % 2 == 0 else 1)), TOTAL_SWING_TIME)
-
 
 func _stop_swinging() -> void: 
 	hitbox_small.disable()

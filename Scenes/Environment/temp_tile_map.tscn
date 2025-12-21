@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://fwc5p5v7t2p6"]
 
-[ext_resource type="Texture2D" uid="uid://c0alugag6w7ui" path="res://Assets/Environment/tilemap-wheat.png" id="1_yoahu"]
+[ext_resource type="Texture2D" uid="uid://c0alugag6w7ui" path="res://Assets/Art/Environment/tilemap-wheat.png" id="1_yoahu"]
 [ext_resource type="Script" uid="uid://cho3xik2nhifs" path="res://Scripts/Environment/temp_tile_map.gd" id="2_hh611"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6tv3"]

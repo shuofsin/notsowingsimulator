@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://x631a46ouifa"]
+[gd_scene load_steps=12 format=3 uid="uid://x631a46ouifa"]
 
 [ext_resource type="Script" uid="uid://dk0hjmwt3ro15" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
-[ext_resource type="Texture2D" uid="uid://bcgtjllakvk7h" path="res://Assets/Player/proto_player.png" id="2_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://bcgtjllakvk7h" path="res://Assets/Art/Player/proto_player.png" id="2_a3d8c"]
 [ext_resource type="PackedScene" uid="uid://uyu44eoi325r" path="res://Scenes/Components/hitbox_component.tscn" id="3_xpcdj"]
 [ext_resource type="Script" uid="uid://bpkeutr8qxy8f" path="res://Scripts/Component/attack.gd" id="4_mtuoh"]
-[ext_resource type="Texture2D" uid="uid://jmbm64qx8whi" path="res://Assets/Player/proto_tool.png" id="5_htcer"]
+[ext_resource type="Texture2D" uid="uid://jmbm64qx8whi" path="res://Assets/Art/Player/proto_tool.png" id="5_htcer"]
+[ext_resource type="AudioStream" uid="uid://q3g0xsyuqgsi" path="res://Assets/Sounds/swing.wav" id="6_0u5uq"]
+[ext_resource type="AudioStream" uid="uid://b363ejnl56pxt" path="res://Assets/Sounds/swing_big.wav" id="7_0u5uq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a3d8c"]
 radius = 3.0
@@ -17,6 +19,11 @@ metadata/_custom_type_script = "uid://bpkeutr8qxy8f"
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
 radius = 7.0
 height = 26.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0u5uq"]
+streams_count = 2
+stream_0/stream = ExtResource("6_0u5uq")
+stream_1/stream = ExtResource("7_0u5uq")
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -49,3 +56,8 @@ shape = SubResource("CapsuleShape2D_mtuoh")
 unique_name_in_owner = true
 position = Vector2(20, -8.742277e-07)
 texture = ExtResource("5_htcer")
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_0u5uq")
+bus = &"Sounds"
