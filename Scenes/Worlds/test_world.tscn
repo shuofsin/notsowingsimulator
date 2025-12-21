@@ -17,3 +17,4 @@ position = Vector2(160, 90)
 [node name="TempTileMap" parent="." instance=ExtResource("2_y6sxc")]
 
 [node name="TimeBar" parent="." instance=ExtResource("4_ithxq")]
+total_time = 30.0

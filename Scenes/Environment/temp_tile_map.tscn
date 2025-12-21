@@ -6,6 +6,8 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6tv3"]
 texture = ExtResource("1_yoahu")
 0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_v1431"]
 sources/0 = SubResource("TileSetAtlasSource_v6tv3")

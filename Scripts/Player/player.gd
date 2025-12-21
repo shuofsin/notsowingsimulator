@@ -12,6 +12,8 @@ var SWING_RESET_TIME: float = 0.2
 @onready var tool_sprite: Sprite2D = %ToolSprite
 @onready var sounds: AudioStreamPlayer2D = %Sounds
 
+func _ready() -> void: 
+	Global.player = self
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("use") and !is_swinging:
