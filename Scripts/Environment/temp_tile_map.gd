@@ -1,7 +1,7 @@
 extends TileMapLayer
 
-const WORLD_SIZE: int = 100
-const WORLD_DENSITY: int = 3
+const WORLD_SIZE: int = 200
+const WORLD_DENSITY: int = 2
 
 func _ready() -> void: 
 	for i in randi_range(0, WORLD_SIZE):
@@ -11,7 +11,6 @@ func _ready() -> void:
 	
 	var block_scene: PackedScene = preload("res://Scenes/Environment/temp_block.tscn")
 	for pos in get_used_cells():
-		print(map_to_local(pos))
 		var new_block: Node2D = block_scene.instantiate()
 		new_block.global_position = map_to_local(pos)
 		get_parent().add_child.call_deferred(new_block)

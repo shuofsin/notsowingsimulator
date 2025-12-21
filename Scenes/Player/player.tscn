@@ -15,7 +15,8 @@ attack_damage = 1.0
 metadata/_custom_type_script = "uid://bpkeutr8qxy8f"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
-height = 28.0
+radius = 7.0
+height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -36,14 +37,15 @@ drag_vertical_enabled = true
 
 [node name="HitboxSmall" parent="." instance=ExtResource("3_xpcdj")]
 unique_name_in_owner = true
+rotation = 1.5707964
 attack = SubResource("Resource_htcer")
 
 [node name="DirectionalSwing" type="CollisionShape2D" parent="HitboxSmall"]
-position = Vector2(18, 0)
+position = Vector2(21, -9.1793913e-07)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_mtuoh")
 
 [node name="ToolSprite" type="Sprite2D" parent="HitboxSmall"]
 unique_name_in_owner = true
-position = Vector2(17, 0)
+position = Vector2(20, -8.742277e-07)
 texture = ExtResource("5_htcer")
