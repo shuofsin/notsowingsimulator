@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cma7qsnrbnsu" path="res://Scenes/Components/health_component.tscn" id="4_xw7vn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36wvg"]
-size = Vector2(16, 9)
+size = Vector2(16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3m48"]
-size = Vector2(16, 23)
+size = Vector2(16, 24)
 
 [node name="TempBlock" type="StaticBody2D"]
+z_as_relative = false
 y_sort_enabled = true
 script = ExtResource("1_6kufk")
 
@@ -19,7 +20,7 @@ script = ExtResource("1_6kufk")
 texture = ExtResource("1_36wvg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7.5)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_36wvg")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_xw7vn")]
@@ -29,6 +30,5 @@ unique_name_in_owner = true
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthboxComponent"]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_k3m48")
 debug_color = Color(2.7434528e-06, 0.6426199, 0.31994095, 0.41960785)

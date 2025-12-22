@@ -6,7 +6,6 @@ var block_scene: PackedScene = preload("res://Scenes/Environment/temp_block.tscn
 
 func _ready() -> void: 
 	Global.map = self
-	visible = false
 
 func _physics_process(_delta: float) -> void:
 	_generate_cells()
