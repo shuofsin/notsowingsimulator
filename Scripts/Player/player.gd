@@ -61,7 +61,7 @@ func _swing() -> void:
 	is_swinging = true
 	var swing_tween = create_tween()
 	swing_tween.finished.connect(_stop_swinging)
-	sounds.play()
+	# sounds.play()
 	if swing_number % 3 == 0: 
 		swing_tween.tween_property(hitbox_small, "rotation", hitbox_small.rotation + 2*PI, total_swing_time * 1.5)
 		return 

@@ -13,7 +13,7 @@ radius = 3.0
 
 [sub_resource type="Resource" id="Resource_htcer"]
 script = ExtResource("4_mtuoh")
-attack_damage = 1.0
+attack_damage = 25.0
 metadata/_custom_type_script = "uid://bpkeutr8qxy8f"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
