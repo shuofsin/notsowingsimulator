@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7ptemw8vksl2"]
+[gd_scene load_steps=6 format=3 uid="uid://c7ptemw8vksl2"]
 
 [ext_resource type="PackedScene" uid="uid://x631a46ouifa" path="res://Scenes/Player/player.tscn" id="2_5e1ne"]
 [ext_resource type="PackedScene" uid="uid://fwc5p5v7t2p6" path="res://Scenes/Environment/temp_tile_map.tscn" id="2_y6sxc"]
 [ext_resource type="PackedScene" uid="uid://dtfp4qw160bvq" path="res://Scenes/GUI/score.tscn" id="3_y6sxc"]
 [ext_resource type="PackedScene" uid="uid://dmgrwini44fpl" path="res://Scenes/GUI/time_bar.tscn" id="4_ithxq"]
+[ext_resource type="PackedScene" uid="uid://cn1w4kus6mpxe" path="res://Scenes/Enemy/phantom_spawner.tscn" id="5_e00x7"]
 
 [node name="TestWorld" type="Node2D"]
 y_sort_enabled = true
@@ -18,3 +19,5 @@ position = Vector2(160, 90)
 
 [node name="TimeBar" parent="." instance=ExtResource("4_ithxq")]
 total_time = 30.0
+
+[node name="PhantomSpawner" parent="." instance=ExtResource("5_e00x7")]

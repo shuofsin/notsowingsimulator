@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl4jys067n7b3"]
+
+[ext_resource type="Script" uid="uid://cvgsfcbpikkgp" path="res://Scripts/Enemy/temp_phantom.gd" id="1_f3gbg"]
+[ext_resource type="Texture2D" uid="uid://bcgtjllakvk7h" path="res://Assets/Art/Player/proto_player.png" id="1_xxxdv"]
+[ext_resource type="PackedScene" uid="uid://cma7qsnrbnsu" path="res://Scenes/Components/health_component.tscn" id="2_f3gbg"]
+[ext_resource type="PackedScene" uid="uid://cxkq8u7iylcgb" path="res://Scenes/Components/healthbox_component.tscn" id="3_tyt81"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxxdv"]
+radius = 4.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vhuc"]
+radius = 5.0
+height = 20.0
+
+[node name="TempPhantom" type="Area2D"]
+z_index = 2
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_f3gbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.9130142, 0, 0.1987417, 1)
+texture = ExtResource("1_xxxdv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xxxdv")
+debug_color = Color(0.99308425, 0, 0.24945176, 0.41960785)
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_f3gbg")]
+unique_name_in_owner = true
+MAX_HEALTH = 30
+
+[node name="HealthboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_tyt81")]
+collision_layer = 4
+collision_mask = 0
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthboxComponent"]
+shape = SubResource("CapsuleShape2D_3vhuc")
+debug_color = Color(2.3102762e-06, 0.64346284, 0.30521232, 0.41960785)
