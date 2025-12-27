@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl4jys067n7b3"]
+[gd_scene load_steps=8 format=3 uid="uid://cl4jys067n7b3"]
 
 [ext_resource type="Script" uid="uid://cvgsfcbpikkgp" path="res://Scripts/Enemy/temp_phantom.gd" id="1_f3gbg"]
 [ext_resource type="Texture2D" uid="uid://bcgtjllakvk7h" path="res://Assets/Art/Player/proto_player.png" id="1_xxxdv"]
@@ -12,6 +12,13 @@ height = 18.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3vhuc"]
 radius = 5.0
 height = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3gbg"]
+bg_color = Color(0.9843137, 0.24313726, 0.09803922, 0.7176471)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="TempPhantom" type="Area2D"]
 z_index = 2
@@ -39,3 +46,20 @@ health_component = NodePath("../HealthComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HealthboxComponent"]
 shape = SubResource("CapsuleShape2D_3vhuc")
 debug_color = Color(2.3102762e-06, 0.64346284, 0.30521232, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -15.0
+offset_right = 8.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_f3gbg")
+value = 100.0
+show_percentage = false

@@ -4,3 +4,7 @@ extends CanvasLayer
 
 func _process(_delta: float) -> void:
 	score_label.text = "Score: " + str(Global.score); 
+	if Global.state == "menu":
+		visible = false 
+	else: 
+		visible = true

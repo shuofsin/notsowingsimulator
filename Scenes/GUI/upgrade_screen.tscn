@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://dom5n6h1hyxmo"]
+
+[ext_resource type="Script" uid="uid://dayirqt8iecj2" path="res://Scripts/GUI/upgrade_screen.gd" id="1_mc7gl"]
+
+[node name="UpgradeScreen" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_mc7gl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Purchase Upgrades"
+
+[node name="SwingContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SwingButton" type="Button" parent="VBoxContainer/SwingContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Swing Speed"
+
+[node name="SwingLabel" type="Label" parent="VBoxContainer/SwingContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="ToolContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ToolButton" type="Button" parent="VBoxContainer/ToolContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tool Size
+"
+
+[node name="ToolLabel" type="Label" parent="VBoxContainer/ToolContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="SpeedContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedButton" type="Button" parent="VBoxContainer/SpeedContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Move Speed
+"
+
+[node name="SpeedLabel" type="Label" parent="VBoxContainer/SpeedContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="DamageContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="DamageButton" type="Button" parent="VBoxContainer/DamageContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tool Damage
+"
+
+[node name="DamageLabel" type="Label" parent="VBoxContainer/DamageContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Wheat: 100"
+horizontal_alignment = 1

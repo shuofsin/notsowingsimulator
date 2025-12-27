@@ -3,6 +3,7 @@ class_name Phantom
 
 @onready var health_component: HealthComponent = %HealthComponent
 var speed: float = 50
+@onready var progress_bar: ProgressBar = %ProgressBar
 
 func _ready() -> void: 
 	body_entered.connect(_body_has_entered)
@@ -13,6 +14,7 @@ func _physics_process(delta: float) -> void:
 		var velocity = direction_to_player * speed
 		position += velocity * delta
 	
+	progress_bar.value = health_component.health / health_component.MAX_HEALTH * 100
 	if health_component.health <= 0:
 		queue_free()
 

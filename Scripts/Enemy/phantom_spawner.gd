@@ -7,6 +7,7 @@ var viewport_size: Vector2 = Vector2(640, 360)
 enum SIDES {LEFT, RIGHT, DOWN, UP}
 
 func _ready() -> void: 
+	Global.spawner = self
 	spawn_timer = TIME_BETWEEN_SPAWNS
 
 func _physics_process(delta: float) -> void:
