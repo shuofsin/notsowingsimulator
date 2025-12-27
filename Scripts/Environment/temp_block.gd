@@ -4,7 +4,12 @@ extends StaticBody2D
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var progress_bar: ProgressBar = %ProgressBar
 var cell_position: Vector2 
+var health: int = 100
 
+func _ready() -> void: 
+	health_component.MAX_HEALTH = health
+	health_component.health = health
+	
 func _process(_delta: float) -> void:
 	if health_component.health <= 0:
 		var new_points: Node2D = points_scene.instantiate()

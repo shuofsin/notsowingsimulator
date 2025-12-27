@@ -21,6 +21,9 @@ func _switch_state() -> void:
 		Global.player.set_process(false)
 		Global.spawner.set_physics_process(false)
 		Global.state = "menu"
+		Global.score -= Global.quota
+		if Global.score <= 0:
+			get_tree().quit();
 		_clear_phantoms()
 		timer.start(total_time)
 		return 
@@ -28,6 +31,9 @@ func _switch_state() -> void:
 		Global.player.set_physics_process(true)
 		Global.player.set_process(true)
 		Global.spawner.set_physics_process(true)
+		Global.spawner.time_between_spawns *= 0.95
+		Global.map.block_health = int(Global.map.block_health * 1.1)
+		Global.quota *= 1.1
 		Global.state = "game"
 		timer.start(total_time)
 		return 

@@ -11,10 +11,10 @@ extends CanvasLayer
 @onready var score_label: Label = %ScoreLabel
 
 
-var swing_cost: float = 5.0
-var tool_cost: float = 5.0
-var speed_cost: float = 5.0
-var damage_cost: float = 5.0
+var swing_cost: float = 3.0
+var tool_cost: float = 3.0
+var speed_cost: float = 3.0
+var damage_cost: float = 3.0
 
 func _ready() -> void:
 	visible = false 
@@ -29,12 +29,12 @@ func _process(_delta: float) -> void:
 	if Global.state == "game":
 		visible = false
 	
-	swing_label.text = "x" + str(Global.player.stats.swing_speed) + "(" + str(swing_cost) + ")"
-	tool_label.text = "x" + str(Global.player.stats.tool_scale) + "(" + str(tool_cost) + ")"
-	speed_label.text = "x" + str(Global.player.stats.speed) + "(" + str(speed_cost) + ")"
-	damage_label.text = "x" + str(Global.player.stats.tool_damage) + "(" + str(damage_cost) + ")"
+	swing_label.text = "x" + ("%0.1f" % Global.player.stats.swing_speed) + "(" + ("%0.1f" % swing_cost) + ")"
+	tool_label.text = "x" + ("%0.1f" % Global.player.stats.tool_scale) + "(" + ("%0.1f" % tool_cost) + ")"
+	speed_label.text = "x" + ("%0.1f" % Global.player.stats.speed) + "(" + ("%0.1f" % speed_cost) + ")"
+	damage_label.text = "x" + ("%0.1f" % Global.player.stats.tool_damage) + "(" + ("%0.1f" % damage_cost) + ")"
 	
-	score_label.text = "Score: " + str(Global.score)
+	score_label.text = "Score: " + ("%0.1f" % Global.score)
 
 	pass
 

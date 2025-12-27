@@ -1,6 +1,7 @@
 extends Node
 
 var score: float = 0;
+var quota: float = 5;
 var player: Player
 var map: Map
 var state: String = "game"

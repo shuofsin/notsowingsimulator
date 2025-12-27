@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dom5n6h1hyxmo"]
+[gd_scene load_steps=8 format=3 uid="uid://dom5n6h1hyxmo"]
 
 [ext_resource type="Script" uid="uid://dayirqt8iecj2" path="res://Scripts/GUI/upgrade_screen.gd" id="1_mc7gl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_occpb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc7gl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yonoe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggui3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr2i6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7gvy"]
 
 [node name="UpgradeScreen" type="CanvasLayer"]
 layer = 3
@@ -21,6 +33,7 @@ grow_vertical = 2
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_occpb")
 text = "Purchase Upgrades"
 
 [node name="SwingContainer" type="VBoxContainer" parent="VBoxContainer"]
@@ -34,6 +47,7 @@ text = "Swing Speed"
 [node name="SwingLabel" type="Label" parent="VBoxContainer/SwingContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mc7gl")
 text = "1.0"
 horizontal_alignment = 1
 
@@ -49,6 +63,7 @@ text = "Tool Size
 [node name="ToolLabel" type="Label" parent="VBoxContainer/ToolContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yonoe")
 text = "1.0"
 horizontal_alignment = 1
 
@@ -64,6 +79,7 @@ text = "Move Speed
 [node name="SpeedLabel" type="Label" parent="VBoxContainer/SpeedContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ggui3")
 text = "1.0"
 horizontal_alignment = 1
 
@@ -79,11 +95,13 @@ text = "Tool Damage
 [node name="DamageLabel" type="Label" parent="VBoxContainer/DamageContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_pr2i6")
 text = "1.0"
 horizontal_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7gvy")
 text = "Wheat: 100"
 horizontal_alignment = 1
