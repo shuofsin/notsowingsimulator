@@ -23,7 +23,7 @@ func _switch_state() -> void:
 		Global.state = "menu"
 		Global.score -= Global.quota
 		if Global.score <= 0:
-			get_tree().quit();
+			get_tree().quit()
 		_clear_phantoms()
 		timer.start(total_time)
 		return 

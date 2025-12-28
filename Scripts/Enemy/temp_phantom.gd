@@ -22,5 +22,5 @@ func _physics_process(delta: float) -> void:
 
 func _body_has_entered(_body_entered: Node2D):
 	if _body_entered is Player:
-		Global.score = floor(Global.score / 2)
+		Global.score = floor(Global.score * 0.8)
 		queue_free()

@@ -1,4 +1,15 @@
 ## To-Do
 - Difficulty tuning
-- Better upgrades?
-	- Needs more dynamism?
+- Diagnose why game isn't feeling fun
+	- Borning enemies?
+	- Not enough loop variety?
+- Ideas
+	- Longer rounds
+	- Powerups in rounds
+	- Wide chop, higher health
+	- Lower wheat density 
+	- Upgrades to increase wheat, etc. 
+	- Progressive upgrades
+		- "Upgrade Locked: Survive two more rounds" etc. etc. 
+- Scene Manager
+- Code Refactor 
