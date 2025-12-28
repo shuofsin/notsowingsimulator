@@ -32,8 +32,9 @@ func _switch_state() -> void:
 		Global.player.set_process(true)
 		Global.spawner.set_physics_process(true)
 		Global.spawner.time_between_spawns *= 0.95
-		Global.map.block_health = int(Global.map.block_health * 1.1)
-		Global.quota *= 1.1
+		Global.map.block_health = int(Global.map.block_health * 1.2)
+		Global.quota *= 1.2
+		Global.phantom_health = int(Global.phantom_health * 1.2)
 		Global.state = "game"
 		timer.start(total_time)
 		return 

@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtfp4qw160bvq"]
+[gd_scene load_steps=5 format=3 uid="uid://dtfp4qw160bvq"]
 
 [ext_resource type="Script" uid="uid://wn32oo6yr7be" path="res://Scripts/GUI/score.gd" id="1_b33dj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b33dj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy1wj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_141op"]
+bg_color = Color(0.85, 0.81316674, 0.2975, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Score" type="CanvasLayer"]
 layer = 2
@@ -13,6 +20,7 @@ script = ExtResource("1_b33dj")
 
 [node name="ScoreLabel" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 24
@@ -21,6 +29,7 @@ text = "Score:"
 
 [node name="QuotaLabel" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -31,3 +40,25 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_iy1wj")
 text = "Quota: "
 horizontal_alignment = 2
+
+[node name="ScoreBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_141op")
+show_percentage = false
+
+[node name="ScoreQuotaLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 16.0
+offset_right = 54.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "Score 10 below quota..."
+horizontal_alignment = 1

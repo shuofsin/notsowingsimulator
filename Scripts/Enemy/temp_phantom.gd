@@ -2,11 +2,13 @@ extends Area2D
 class_name Phantom
 
 @onready var health_component: HealthComponent = %HealthComponent
-var speed: float = 50
 @onready var progress_bar: ProgressBar = %ProgressBar
+var speed: float = 50
 
 func _ready() -> void: 
 	body_entered.connect(_body_has_entered)
+	health_component.MAX_HEALTH = Global.phantom_health
+	health_component.health = Global.phantom_health
 
 func _physics_process(delta: float) -> void:
 	if Global.player:

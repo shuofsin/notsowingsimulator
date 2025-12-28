@@ -1,5 +1,4 @@
 ## To-Do
-- Phantom Scaling
-- Quota scaling tuning 
+- Difficulty tuning
 - Better upgrades?
 	- Needs more dynamism?
