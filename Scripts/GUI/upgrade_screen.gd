@@ -11,10 +11,10 @@ extends CanvasLayer
 @onready var score_label: Label = %ScoreLabel
 
 
-var swing_cost: float = 3.0
-var tool_cost: float = 3.0
-var speed_cost: float = 3.0
-var damage_cost: float = 3.0
+var swing_cost: float = 300
+var tool_cost: float = 300
+var speed_cost: float = 300
+var damage_cost: float = 300
 
 func _ready() -> void:
 	visible = false 

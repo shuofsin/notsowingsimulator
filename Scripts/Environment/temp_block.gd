@@ -4,7 +4,7 @@ extends StaticBody2D
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var progress_bar: ProgressBar = %ProgressBar
 var cell_position: Vector2 
-var health: int = 100
+var health: float
 
 func _ready() -> void: 
 	health_component.MAX_HEALTH = health
@@ -15,8 +15,8 @@ func _process(_delta: float) -> void:
 		var new_points: Node2D = points_scene.instantiate()
 		new_points.global_position = global_position
 		get_parent().add_child(new_points)
-		Global.score += 1
-		Global.map.set_cell(cell_position, 0, Vector2i(2, 0), 0)
+		Global.score += 100
+		Global.map.set_cell(cell_position, 0, Vector2i(1, 0), 0)
 		queue_free()
 	
 	progress_bar.visible = (health_component.health != health_component.MAX_HEALTH)

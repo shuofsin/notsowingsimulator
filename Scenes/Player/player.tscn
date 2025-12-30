@@ -28,6 +28,7 @@ stream_1/stream = ExtResource("7_0u5uq")
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 2
+collision_mask = 17
 script = ExtResource("1_uvnfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://djgkhix0crf0l"]
+[gd_scene load_steps=4 format=3 uid="uid://djgkhix0crf0l"]
 
+[ext_resource type="Script" uid="uid://bgkvsvb7640ra" path="res://Scripts/Environment/temp_rock.gd" id="1_kg44s"]
 [ext_resource type="Texture2D" uid="uid://l8h6pppip2du" path="res://Assets/Art/Environment/proto_rock.png" id="1_spn8v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kg44s"]
@@ -8,7 +9,9 @@ size = Vector2(16, 15)
 [node name="TempRock" type="StaticBody2D"]
 z_as_relative = false
 y_sort_enabled = true
+collision_layer = 16
 collision_mask = 0
+script = ExtResource("1_kg44s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
