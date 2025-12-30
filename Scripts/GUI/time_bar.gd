@@ -42,5 +42,4 @@ func _switch_state() -> void:
 func _clear_phantoms() -> void:
 	for child in get_parent().get_children():
 		if child is Phantom:
-			print("phantoms_cleared")
 			child.queue_free()
