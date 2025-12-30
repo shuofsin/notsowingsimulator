@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-
 var stats: Dictionary = {
 	"speed" : 1.0,
 	"swing_speed" : 1.0,
@@ -31,7 +30,7 @@ func _process(_delta: float) -> void:
 	speed = stats.speed * 50.0
 	total_swing_time = (1/stats.swing_speed) * 0.4
 	hitbox_small.scale = Vector2(stats.tool_scale, stats.tool_scale)
-	hitbox_small.attack.attack_damage = 25.0 * stats.tool_damage
+	hitbox_small.attack.attack_damage = 10.0 * stats.tool_damage
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")

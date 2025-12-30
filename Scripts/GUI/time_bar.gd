@@ -5,6 +5,7 @@ extends CanvasLayer
 @export var total_time: float = 2
 
 func _ready() -> void:
+	total_time = Global.time
 	timer.start(total_time)
 	timer.timeout.connect(_switch_state)
 

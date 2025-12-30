@@ -3,7 +3,7 @@ class_name Phantom
 
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var progress_bar: ProgressBar = %ProgressBar
-var speed: float = 50
+var speed: float = 45
 
 func _ready() -> void: 
 	body_entered.connect(_body_has_entered)

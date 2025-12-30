@@ -4,7 +4,7 @@ class_name Map
 const WORLD_DENSITY: int = 5
 var block_scene: PackedScene = preload("res://Scenes/Environment/temp_block.tscn")
 var rock_scene: PackedScene = preload("res://Scenes/Environment/temp_rock.tscn")
-var block_health: int = 300;
+var block_health: int = 10;
 
 func _ready() -> void: 
 	Global.map = self
