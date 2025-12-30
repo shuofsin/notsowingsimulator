@@ -4,11 +4,14 @@ class_name Phantom
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var progress_bar: ProgressBar = %ProgressBar
 var speed: float = 45
+var timer: float
+const TIME_TO_FADE: float = 15.0
 
 func _ready() -> void: 
 	body_entered.connect(_body_has_entered)
 	health_component.MAX_HEALTH = Global.phantom_health
 	health_component.health = Global.phantom_health
+	timer = TIME_TO_FADE
 
 func _physics_process(delta: float) -> void:
 	if Global.player:
@@ -19,6 +22,12 @@ func _physics_process(delta: float) -> void:
 	progress_bar.value = health_component.health / health_component.MAX_HEALTH * 100
 	if health_component.health <= 0:
 		queue_free()
+	
+	timer -= delta
+	if timer <= 0:
+		var tween = create_tween()
+		tween.tween_property(self, "modulate:a", 0, 3)
+		tween.finished.connect(queue_free)
 
 func _body_has_entered(_body_entered: Node2D):
 	if _body_entered is Player:
