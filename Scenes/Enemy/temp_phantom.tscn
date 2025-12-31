@@ -39,7 +39,7 @@ unique_name_in_owner = true
 MAX_HEALTH = 30
 
 [node name="HealthboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_tyt81")]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 0
 health_component = NodePath("../HealthComponent")
 

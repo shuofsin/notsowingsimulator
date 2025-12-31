@@ -24,10 +24,10 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 	
 	timer -= delta
-	if timer <= 0:
-		var tween = create_tween()
-		tween.tween_property(self, "modulate:a", 0, 3)
-		tween.finished.connect(queue_free)
+	#if timer <= 0:
+	#	var tween = create_tween()
+	#	tween.tween_property(self, "modulate:a", 0, 3)
+	#	tween.finished.connect(queue_free)
 
 func _body_has_entered(_body_entered: Node2D):
 	if _body_entered is Player:

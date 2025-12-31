@@ -1,7 +1,7 @@
 extends Node2D
 
 var spawn_timer: float
-var time_between_spawns: float = 3.0
+var time_between_spawns: float = 4.0
 var phantom: PackedScene = preload("res://Scenes/Enemy/temp_phantom.tscn")
 var viewport_size: Vector2 = Vector2(640, 360)
 enum SIDES {LEFT, RIGHT, DOWN, UP}
@@ -35,3 +35,4 @@ func _physics_process(delta: float) -> void:
 			new_phantom.global_position = Vector2(new_x, extents.down + 16)
 		get_parent().add_child(new_phantom)
 		spawn_timer = time_between_spawns
+		time_between_spawns = time_between_spawns * 0.99

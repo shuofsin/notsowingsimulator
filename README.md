@@ -1,15 +1,11 @@
 ## To-Do
-- Difficulty tuning
-- Diagnose why game isn't feeling fun
-	- Borning enemies?
-	- Not enough loop variety?
-- Ideas
-	- Longer rounds
-	- Powerups in rounds
-	- Wide chop, higher health
-	- Lower wheat density 
-	- Upgrades to increase wheat, etc. 
-	- Progressive upgrades
-		- "Upgrade Locked: Survive two more rounds" etc. etc. 
-- Scene Manager
-- Code Refactor 
+- MAKE THE GAME FUN
+	- Ditch the upgrades???
+	- Arcade style
+		- Run from the bad guys
+		- Once bad guys hit you, lose the game
+		- Can include powerups randomly in the map
+			- Time-based
+			- One at a time
+			- Same upgrades repurposed
+- Fix memory issues

@@ -9,6 +9,7 @@ var stats: Dictionary = {
 }
 
 var speed: float = stats.speed * 50.0
+var base_tool_damage: float = 10.0
 var total_swing_time: float = (1/stats.swing_speed) * 0.4
 var swing_number: int = 0 
 var MAX_SWINGS: int = 3
@@ -30,7 +31,7 @@ func _process(_delta: float) -> void:
 	speed = stats.speed * 50.0
 	total_swing_time = (1/stats.swing_speed) * 0.4
 	hitbox_small.scale = Vector2(stats.tool_scale, stats.tool_scale)
-	hitbox_small.attack.attack_damage = 10.0 * stats.tool_damage
+	hitbox_small.attack.attack_damage = base_tool_damage * stats.tool_damage
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
