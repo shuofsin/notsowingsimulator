@@ -4,7 +4,7 @@ extends StaticBody2D
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var progress_bar: ProgressBar = %ProgressBar
 var cell_position: Vector2 
-var health: float
+var health: int
 
 func _ready() -> void: 
 	health_component.MAX_HEALTH = health
