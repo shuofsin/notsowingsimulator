@@ -16,6 +16,9 @@ var MAX_SWINGS: int = 3
 var is_swinging: bool = false
 var swing_reset_timer: float
 var SWING_RESET_TIME: float = 0.2
+var is_buffed: bool = false 
+var buff_timer: float 
+var TOTAL_BUFF_TIME: float = 3.0
 @onready var hitbox_small: HitboxComponent = %HitboxSmall
 @onready var tool_sprite: Sprite2D = %ToolSprite
 @onready var sounds: AudioStreamPlayer2D = %Sounds
@@ -27,7 +30,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("use") and !is_swinging:
 		_swing()
-	
+
+	if is_buffed:
+		speed = 1.5 * 50.0
+		total_swing_time = 0.2
+		hitbox_small.scale = Vector2(1.5, 1.5)
+		hitbox_small.attack.attack_damage = base_tool_damage * 1.5
+		return 
+
 	speed = stats.speed * 50.0
 	total_swing_time = (1/stats.swing_speed) * 0.4
 	hitbox_small.scale = Vector2(stats.tool_scale, stats.tool_scale)
@@ -40,6 +50,12 @@ func _physics_process(delta: float) -> void:
 	swing_reset_timer -= delta
 	if !is_swinging && swing_reset_timer <= 0: 
 		swing_number = 0
+	
+	if buff_timer >= 0:
+		buff_timer -= delta 
+		is_buffed = true 
+	else:
+		is_buffed = false
 
 	move_and_slide()
 

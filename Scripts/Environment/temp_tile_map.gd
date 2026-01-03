@@ -4,8 +4,10 @@ class_name Map
 const WORLD_DENSITY: int = 5
 var block_scene: PackedScene = preload("res://Scenes/Environment/temp_block.tscn")
 var rock_scene: PackedScene = preload("res://Scenes/Environment/temp_rock.tscn")
+var buff_scene: PackedScene = preload("res://Scenes/Environment/buff_block.tscn")
 var block_health: int = 10;
 const ROCK_CHANCE: float = 0.2
+const BUFF_CHANCE: float = 0.005
 var blocks: Dictionary[Vector2i, StaticBody2D]
 
 func _ready() -> void: 
@@ -43,7 +45,15 @@ func _generate_cells() -> void:
 				new_rock.global_position = to_global(map_to_local(cell_coords))
 				blocks.set(cell_coords, new_rock)
 				get_parent().add_child.call_deferred(new_rock)
-			else:
+			elif randi_range(0, int(1/BUFF_CHANCE)) == 0:
+				set_cell(cell_coords, 0, Vector2i(4, 0), 0)
+				var new_block: StaticBody2D = buff_scene.instantiate()
+				new_block.global_position = to_global(map_to_local(cell_coords))
+				new_block.cell_position = cell_coords
+				new_block.health = block_health
+				blocks.set(cell_coords, new_block)
+				get_parent().add_child.call_deferred(new_block)
+			else: 
 				set_cell(cell_coords, 0, Vector2i(0, 0), 0)
 				var new_block: StaticBody2D = block_scene.instantiate()
 				new_block.global_position = to_global(map_to_local(cell_coords))

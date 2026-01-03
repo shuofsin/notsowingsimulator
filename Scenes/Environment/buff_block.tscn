@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://clkojeglfd6hw"]
+
+[ext_resource type="Script" uid="uid://bb5g5xcgqmo4v" path="res://Scripts/Environment/buff_block.gd" id="1_ddd3c"]
+[ext_resource type="Texture2D" uid="uid://b240lvd7bvqui" path="res://Assets/Art/Environment/proto_block.png" id="2_aikbg"]
+[ext_resource type="PackedScene" uid="uid://cma7qsnrbnsu" path="res://Scenes/Components/health_component.tscn" id="3_y7ek1"]
+[ext_resource type="Script" uid="uid://355luf48vjkt" path="res://Scripts/Component/healthbox_component.gd" id="4_1pc33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ek1"]
+size = Vector2(16, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14p6f"]
+size = Vector2(16, 24)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7ek1"]
+bg_color = Color(0.29236755, 0.6950625, 0.4222486, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="BuffBlock" type="StaticBody2D"]
+script = ExtResource("1_ddd3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.21595871, 0.61956334, 0.99999994, 1)
+position = Vector2(0, -4)
+texture = ExtResource("2_aikbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y7ek1")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_y7ek1")]
+unique_name_in_owner = true
+position = Vector2(0, -4)
+
+[node name="HealthboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+script = ExtResource("4_1pc33")
+health_component = NodePath("../HealthComponent")
+metadata/_custom_type_script = "uid://355luf48vjkt"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealthboxComponent"]
+modulate = Color(0.74209034, 0.83496773, 0.2738785, 1)
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_14p6f")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -22.0
+offset_right = 11.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_y7ek1")
+show_percentage = false
